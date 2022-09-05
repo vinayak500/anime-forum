@@ -73,30 +73,36 @@ module.exports.create = function(req , res){
 }; 
 
 module.exports.createsession = function(req , res){
-     //steps to authenticate
-     //find the user 
-     User.findOne({email:req.body.email} , function(err,user){
+//      //steps to authenticate
+//      //find the user 
+//      User.findOne({email:req.body.email} , function(err,user){
 
-        if(err){console.log('error in finding user in signing up'); return;}
+//         if(err){console.log('error in finding user in signing up'); return;}
 
-     //handle user found
-             if(user)
-             {
- //handle password which dont match
-              if(user.password != req.body.password)
-              {
-                return res.redirect('back');
-              }
-               //handle session creation
-                    res.cookie('user_id',user._id);
-                    return res.redirect('/user/profile');
+//      //handle user found
+//              if(user)
+//              {
+//  //handle password which dont match
+//               if(user.password != req.body.password)
+//               {
+//                 return res.redirect('back');
+//               }
+//                //handle session creation
+//                     res.cookie('user_id',user._id);
+//                     return res.redirect('/user/profile');
 
-             }else
-             {
-               //handle user not found
-              return res.redirect('back');
-             }
+//              }else
+//              {
+//                //handle user not found
+//               return res.redirect('back');
+//              }
 
 
-      })
+//       })
+
+
+
+return res.redirect('/');
+
+
 }; 
